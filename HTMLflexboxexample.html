@@ -1,0 +1,81 @@
+<!doctype html>
+<title>Flexbox Example</title>
+<link rel="shortcut icon" href="./assets/fav.png">
+<style>
+  * {
+   box-sizing: border-box; 
+  }
+  body {
+    padding: 2em;
+    font-family: 'Open-Sans', sans-serif;
+     font-weight: bold;
+  }
+  #main {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+  }
+
+  #main > nav, 
+  #main > aside {
+    padding: 0px;
+    flex: 0 0 18.6vw;
+    background: beige;
+    text-align: center;
+  }
+  #main > nav {
+    order: 0;
+    background: gold;
+  }
+  #main > aside {
+     order: 2;
+    background: hotpink;
+  }
+  header, footer, article, nav, aside {
+    padding: 10px;
+  }
+  header{
+  	background: tomato;
+  }
+  article {
+ 
+        	padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+  footer{
+  	background: lightgreen;
+  }
+  header, footer {
+    flex-flow: column wrap;
+    align-content: center;
+   
+    display: flex;
+  }
+  .mainContentItem {
+     order: 1;
+    flex: 1;
+    text-align: left;
+    background: deepskyblue;
+  }
+</style>
+<body>
+  <header>Header sample flexbox example</header>
+  <div id="main">
+    <section class="mainContentItem">
+    <article>
+    <h2>First article</h2>
+    <p>This defines a flex container; inline or block depending on the given value. It 		enables a flex context for all its direct children.
+                </p>
+    </article>
+    <article><h2>Second article</h2>
+                <p>This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in
+                    horizontal rows or vertical columns.</p></article>
+    <article><h2>Third article</h2>
+                <p>By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property.</p>
+                <p>This is a shorthand for the flex-direction and flex-wrap properties, which together define the flex container’s main and cross axes. The default value is row nowrap.</p></article>
+    </section>
+    <nav>Left Side Bar</nav>
+    <aside>Right Side Bar</aside>
+  </div>
+  <footer>Footer</footer>
+</body>
